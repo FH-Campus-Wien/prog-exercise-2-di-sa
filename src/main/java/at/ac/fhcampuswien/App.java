@@ -7,33 +7,28 @@ public class App {
     //todo Task 1
     public void largestNumber() {
         // input your solution here
-            double yourNumber = 0;
+        Scanner eingabe = new Scanner(System.in);
+        int counter = 0;
+        float biggest = 0;
+        while(true){
+            counter++;
+            System.out.print("Number "+counter+": ");
 
-            double input;
+            float zahl = eingabe.nextFloat();
 
-            int counter = 1;
+            if (zahl > biggest) {
+                biggest = zahl;
+            }
 
-            Scanner scanner = new Scanner(System.in);
-
-            do {
-                System.out.print("Number " + counter + ": ");
-
-                input = scanner.nextDouble();
-
-                if (input > 0) {
-
-                    if (input > yourNumber) yourNumber = input;
-
-                }
-
-                counter++;
-
-            } while (input > 0);
-
-            if (yourNumber == 0) System.out.println("No number entered.");
-
-            else System.out.println("The largest number is " + yourNumber);
-
+            if(counter == 1 && zahl <= 0) {
+                System.out.println("No number entered.");
+                break;
+            } else if(zahl <= 0) {
+                System.out.print("The largest number is ");
+                System.out.format("%.2f\n", biggest);
+                break;
+            }
+        }
     }
 
 
